@@ -23,10 +23,10 @@
 									<div class="form-group">
 										<h5>User Role <span class="text-danger">*</span></h5>
 										<div class="controls">
-											<select name="usertype" id="select" required="" class="form-control" aria-invalid="false">
+											<select name="role" id="role" required="" class="form-control" aria-invalid="false">
 												<option value="" selected disabled>Select Role</option>
 												<option value="Admin">Admin</option>
-												<option value="User">User</option>
+												<option value="Operator">Operator</option>
 											</select>
 										</div>
 									</div>
@@ -44,29 +44,29 @@
 									</div>
 								</div>   <!-- End Col-MD-4  -->
 
-								<div class="col-md-4">
+								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<h5>Qualification <span class="text-danger">*</span></h5>
 										<div class="controls">
 											<input type="text" value="{{ old('qualification') }}" name="qualification" class="form-control" required=""> 
 										</div>
-									</div>
-								</div>      <!-- End Col-MD-4  -->
+									</div> -->
+								<!-- </div> -->      <!-- End Col-MD-4  -->
 
 							</div>	    <!-- End Row -->
 
 
 							<div class="row">
 
-								<div class="col-md-4">
+								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<h5>Join Date <span class="text-danger">*</span></h5>
 										<div class="controls">
 											<input type="date" name="join_date" value="{{ old('join_date') }}" class="form-control" required=""></div>
-									</div>
-								</div>   <!-- End Col-MD-4  -->
+									</div> -->
+								<!-- </div> -->   <!-- End Col-MD-4  -->
 
-								<div class="col-md-4">
+								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<h5>Gender <span class="text-danger">*</span></h5>
 										<div class="controls">
@@ -76,31 +76,31 @@
 												<option value="Female">Female</option>
 											</select>
 										</div>
-									</div>
-								</div>      <!-- End Col-MD-4  -->
+									</div> -->
+								<!-- </div> -->      <!-- End Col-MD-4  -->
 
-								<div class="col-md-4">
+								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<h5>Date Of Birth <span class="text-danger">*</span></h5>
 										<div class="controls">
 											<input type="date" value="{{ old('dob') }}" name="dob" class="form-control" required=""></div>
-									</div>
-								</div>   <!-- End Col-MD-4  -->
+									</div> -->
+								<!-- </div> -->   <!-- End Col-MD-4  -->
 
 							</div>	    <!-- End Row -->
 
 
 							<div class="row">
-								<div class="col-md-4">
+								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<h5>Phone <span class="text-danger">*</span></h5>
 										<div class="controls">
 											<input type="phone" value="{{ old('phone') }}" name="phone" class="form-control" required=""> 
 										</div>
-									</div>
-								</div>      <!-- End Col-MD-4  -->
+									</div> -->
+								<!-- </div> -->      <!-- End Col-MD-4  -->
 
-								<div class="col-md-4">
+								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<h5>Marital Status <span class="text-danger">*</span></h5>
 										<div class="controls">
@@ -110,17 +110,17 @@
 												<option value="Single">Single</option>
 											</select>
 										</div>
-									</div>
-								</div>      <!-- End Col-MD-4  -->
+									</div> -->
+								<!-- </div> -->      <!-- End Col-MD-4  -->
 
-								<div class="col-md-4">
+								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<h5>Address <span class="text-danger">*</span></h5>
 										<div class="controls">
 											<textarea name="address"  rows="4" id="textarea" class="form-control" required="" placeholder="House Address">{{ old('address') }}</textarea>
 										</div>
-									</div>
-								</div>   <!-- End Col-MD-4  -->
+									</div> -->
+								<!-- </div> -->   <!-- End Col-MD-4  -->
 
 							</div>	    <!-- End Row -->
 
@@ -139,18 +139,10 @@
 								</div>      <!-- End Col-MD-4  -->
 
 								<div class="col-md-4">
-									<div class="form-group">
-										<h5>Password <span class="text-danger">*</span></h5>
-										<div class="controls">
-											<input type="password" value="{{ old('password') }}" name="password" class="form-control" required="">
-											@error('password')
-												<span class="text-danger">{{ $message }}</span>
-											@enderror 
-										</div>
-									</div>
+									
 								</div>      <!-- End Col-MD-4  -->
 
-								<div class="col-md-4">
+								<!-- <div class="col-md-4">
 									<div class="form-group">
 										<h5>State of Origin <span class="text-danger">*</span></h5>
 										<div class="controls">
@@ -160,12 +152,12 @@
 											@enderror 
 										</div>
 									</div>
-								</div>      <!-- End Col-MD-4  -->
+								</div>   -->    <!-- End Col-MD-4  -->
 
 							</div>	    <!-- End Row -->
 
 
-							<div class="row">
+							<!-- <div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
 										<h5>Profile Image <span class="text-danger">*</span></h5>
@@ -177,10 +169,10 @@
 										<div class="controls">
 											<img id="showImage" src="{{ (!empty($user->image) ? url('upload/user_image/'.$user->image) : url('upload/no_image.jpg')) }}" style="height: 100px; width: 100px; border: 1px solid #000000">
 										</div>
-									</div>
-								</div>   <!-- End Col-MD-4  -->
+									</div> -->
+								<!-- </div> -->   								<!-- End Col-MD-4  -->
 
-							</div>	    <!-- End Row -->
+							<!-- </div> -->	    							<!-- End Row -->
 
 
 					
@@ -199,7 +191,7 @@
 						
 						<div class="text-xs-right">
 							<!-- <button type="submit" class="btn btn-rounded btn-info">Submit</button> -->
-							<input type="submit" href="" class="btn btn-rounded btn-info mb-5" value="Update">
+							<input type="submit" href="" class="btn btn-rounded btn-info mb-5" value="Submit">
 						</div>
 					</form>
 

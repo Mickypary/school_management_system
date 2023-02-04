@@ -3,6 +3,12 @@
 
 @section('admin')
 
+@php
+
+$page_name = '';
+
+@endphp
+
 		<!-- Main content -->
 		
 				<div class="col-xl-3 col-6">

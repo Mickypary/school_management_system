@@ -14,7 +14,8 @@ class ProfileController extends Controller
     {
         $id = Auth::user()->id;
         $user = User::findorFail($id);
-        return view('backend.user.view_profile', compact('user'));
+        $data['page_name'] = 'view_profile';
+        return view('backend.user.view_profile', compact('user'), $data);
     } // End Method
 
     public function ProfileEdit()
@@ -66,7 +67,8 @@ class ProfileController extends Controller
 
     public function PasswordView()
     {
-        return view('backend.user.edit_password');
+        $data['page_name'] = 'edit_password';
+        return view('backend.user.edit_password', $data);
     } // End Method
 
     public function PasswordUpdate(Request $request)

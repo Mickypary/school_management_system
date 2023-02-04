@@ -22,13 +22,17 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<h5>User Role <span class="text-danger">*</span></h5>
+										@if(Auth::user()->usertype == 'Admin')
 										<div class="controls">
-											<select name="usertype" disabled id="select" required="" class="form-control" aria-invalid="false">
-												<option value="" selected disabled>Select Role</option>
+											<select name="usertype" id="select" required="" class="form-control" aria-invalid="false">
+												<option value="" disabled>Select Role</option>
 												<option value="Admin" {{ ($editData->usertype == "Admin" ? "selected" : '') }}>Admin</option>
 												<option value="User" {{ ($editData->usertype == 'User' ? 'selected' : '')}} >User</option>
 											</select>
 										</div>
+										@else
+											<input class="form-control" type="text" readonly name="usertype" value="{{ $editData->usertype }}">
+										@endif
 									</div>
 								</div>      <!-- End Col-MD-4  -->
 

@@ -11,13 +11,15 @@ class UserController extends Controller
     public function UserView()
     {
         // $allData = User::all();
-        $data['allData'] = User::all();
+        $data['allData'] = User::where('usertype','Admin')->get();
+        $data['page_name'] = 'view_user';
         return view('backend.user.view_user', $data);
     } // End Method
 
     public function UserAdd()
     {
-        return view('backend.user.add_user');
+        $data['page_name'] = 'add_user';
+        return view('backend.user.add_user', $data);
     } // End Method
 
     public function UserStore(Request $request)
@@ -28,16 +30,19 @@ class UserController extends Controller
         ]);
 
         $data = new User();
-        $data->usertype = $request->usertype;
+        $code = rand(0000,9999);
+        $data->usertype = 'Admin';
         $data->name = $request->name;
+        $data->role = $request->role;
         $data->email = $request->email;
-        $data->gender = $request->gender;
-        $data->dob = $request->dob;
-        $data->join_date = $request->join_date;
-        $data->address = $request->address;
-        $data->phone = $request->phone;
-        $data->state_of_origin = $request->state_of_origin;
-        $data->password = bcrypt($request->password);
+        $data->code = $code;
+        // $data->gender = $request->gender;
+        // $data->dob = $request->dob;
+        // $data->join_date = $request->join_date;
+        // $data->address = $request->address;
+        // $data->phone = $request->phone;
+        // $data->state_of_origin = $request->state_of_origin;
+        $data->password = bcrypt($code);
 
         if ($request->file('image')) {
             $file = $request->file('image');
@@ -84,17 +89,17 @@ class UserController extends Controller
         ]);
 
         $data = User::findorFail($request->id);
-        $data->usertype = $request->usertype;
+        $data->role = $request->role;
         $data->name = $request->name;
         $data->email = $request->email;
-        $data->gender = $request->gender;
-        $data->dob = $request->dob;
-        $data->join_date = $request->join_date;
-        $data->address = $request->address;
-        $data->phone = $request->phone;
-        $data->state_of_origin = $request->state_of_origin;
-        $data->qualification = $request->qualification;
-        $data->marital_status = $request->marital_status;
+        // $data->gender = $request->gender;
+        // $data->dob = $request->dob;
+        // $data->join_date = $request->join_date;
+        // $data->address = $request->address;
+        // $data->phone = $request->phone;
+        // $data->state_of_origin = $request->state_of_origin;
+        // $data->qualification = $request->qualification;
+        // $data->marital_status = $request->marital_status;
 
         // $uploaddir = '/var/www/uploads/';
         $uploaddir = public_path('upload/user_image/');
